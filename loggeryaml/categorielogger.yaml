@@ -1,0 +1,43 @@
+version: 1
+disable_existing_loggers: False
+formatters:
+ simple:
+   format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+handlers:
+
+# ROLE TABLE HANDLERS
+
+ postcategorie:
+   class: logging.FileHandler
+   level: DEBUG
+   formatter: simple
+   filename:  loggerfiles/categorielogger/postcategorie.log
+
+ getupdatecategorie:
+   class: logging.FileHandler
+   level: DEBUG
+   formatter: simple
+   filename:  loggerfiles/categorielogger/getupdatecategorie.log
+
+ consolepostcategorie:
+   class: logging.StreamHandler
+   level: DEBUG
+   formatter: simple
+
+
+loggers:
+
+ postcategories:
+   level: DEBUG
+   handlers: [postcategorie]
+   propagate: True
+
+ getupdatecategories:
+   level: DEBUG
+   handlers: [getupdatecategorie]
+   propagate: True
+
+ consolepostcategories:
+   level: DEBUG
+   handlers: [consolepostcategorie]
+   propagate: True 

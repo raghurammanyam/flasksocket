@@ -1,0 +1,45 @@
+version: 1
+disable_existing_loggers: False
+formatters:
+ simple:
+   format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+handlers:
+
+# ROLE TABLE HANDLERS
+
+ postsize:
+   class: logging.FileHandler
+   level: DEBUG
+   formatter: simple
+   filename:  loggerfiles/sizelogger/postsize.log
+
+ getupdatesize:
+   class: logging.FileHandler
+   level: DEBUG
+   formatter: simple
+   filename:  loggerfiles/sizelogger/getupdatesize.log
+
+ consolesize:
+   class: logging.StreamHandler
+   level: DEBUG
+   formatter: simple
+
+
+
+
+loggers:
+
+ postsizes:
+   level: DEBUG
+   handlers: [postsize]
+   propagate: True
+
+ getupdatesizes:
+   level: DEBUG
+   handlers: [getupdatesize]
+   propagate: True
+
+ consolesizes:
+   level: DEBUG
+   handlers: [consolesize]
+   propagate: True

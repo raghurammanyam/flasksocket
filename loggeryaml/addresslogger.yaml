@@ -1,0 +1,44 @@
+version: 1
+disable_existing_loggers: False
+formatters:
+ simple:
+   format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+handlers:
+
+# ROLE TABLE HANDLERS
+
+ postaddress:
+   class: logging.FileHandler
+   level: DEBUG
+   formatter: simple
+   filename:  loggerfiles/addresslogger/postaddress.log
+
+ getupdateaddress:
+   class: logging.FileHandler
+   level: DEBUG
+   formatter: simple
+   filename:  loggerfiles/addresslogger/getupdateaddress.log
+
+
+ consoleaddress:
+   class: logging.StreamHandler
+   level: DEBUG
+   formatter: simple
+
+
+loggers:
+
+ postaddresss:
+   level: DEBUG
+   handlers: [postaddress]
+   propagate: True
+
+ getupdateaddresss:
+   level: DEBUG
+   handlers: [getupdateaddress]
+   propagate: True
+
+ consoleaddresss:
+   level: DEBUG
+   handlers: [consoleaddress]
+   propagate: True

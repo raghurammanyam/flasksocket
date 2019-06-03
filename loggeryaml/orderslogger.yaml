@@ -1,0 +1,47 @@
+version: 1
+disable_existing_loggers: False
+formatters:
+ simple:
+   format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+handlers:
+
+# ROLE TABLE HANDLERS
+
+ postorder:
+   class: logging.FileHandler
+   level: DEBUG
+   formatter: simple
+   filename:  loggerfiles/orderlogger/postorder.log
+
+ getupdateorder:
+   class: logging.FileHandler
+   level: DEBUG
+   formatter: simple
+   filename:  loggerfiles/orderlogger/getupdateorder.log
+
+
+
+ consoleorder:
+   class: logging.StreamHandler
+   level: DEBUG
+   formatter: simple
+
+
+loggers:
+
+ postorders:
+   level: DEBUG
+   handlers: [postorder]
+   propagate: True
+
+ getupdateorders:
+   level: DEBUG
+   handlers: [getupdateorder]
+   propagate: True
+
+
+
+ consoleorders:
+   level: DEBUG
+   handlers: [consoleorder]
+   propagate: True

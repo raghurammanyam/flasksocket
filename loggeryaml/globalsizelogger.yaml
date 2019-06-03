@@ -1,0 +1,43 @@
+version: 1
+disable_existing_loggers: False
+formatters:
+ simple:
+   format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+handlers:
+
+# ROLE TABLE HANDLERS
+
+ postglobalsize:
+   class: logging.FileHandler
+   level: DEBUG
+   formatter: simple
+   filename:  loggerfiles/globalsizelogger/postglobalsize.log
+
+ getupdateglobalsize:
+   class: logging.FileHandler
+   level: DEBUG
+   formatter: simple
+   filename:  loggerfiles/pricelogger/getupdateglobalsize.log
+
+
+ consoleglobalsize:
+   class: logging.StreamHandler
+   level: DEBUG
+   formatter: simple
+
+loggers:
+
+ postglobalsizes:
+   level: DEBUG
+   handlers: [postglobalsize]
+   propagate: True
+
+ getupdateglobalsizes:
+   level: DEBUG
+   handlers: [getupdateglobalsize]
+   propagate: True
+
+ consoleglobalsizes:
+   level: DEBUG
+   handlers: [consoleglobalsize]
+   propagate: True

@@ -1,0 +1,73 @@
+version: 1
+disable_existing_loggers: False
+formatters:
+ simple:
+   format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+handlers:
+
+ getupdateuser:
+  class: logging.FileHandler
+  level: DEBUG
+  formatter: simple
+  filename: loggerfiles/userlogger/getupdateuser.log
+
+
+ signup_user:
+  class: logging.FileHandler
+  level: DEBUG
+  formatter: simple
+  filename: loggerfiles/userlogger/signup_user.log
+
+ signin_user:
+  class: logging.FileHandler
+  level: DEBUG
+  formatter: simple
+  filename: loggerfiles/userlogger/signin_user.log
+
+ resetpassworduser:
+  class: logging.FileHandler
+  level: DEBUG
+  formatter: simple
+  filename: loggerfiles/userlogger/signupuser.log
+
+
+ consoleuser:
+   class: logging.StreamHandler
+   level: DEBUG
+   formatter: simple
+
+
+
+#LOGGERS
+
+# PASSPORT TABLE LOGGERS
+
+loggers:
+
+
+ getupdateusers:
+   level: DEBUG
+   handlers: [getupdateuser]
+   propagate: True
+
+ signup_users:
+   level: DEBUG
+   handlers: [signup_user]
+   propagate: True
+
+ signin_users:
+   level: DEBUG
+   handlers: [signin_user]
+   propagate: True
+
+
+ resetpasswordusers:
+   level: DEBUG
+   handlers: [resetpassworduser]
+   propagate: True
+
+
+ consoleusers:
+   level: DEBUG
+   handlers: [consoleuser]
+   propagate: True

@@ -1,0 +1,44 @@
+version: 1
+disable_existing_loggers: False
+formatters:
+ simple:
+   format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+handlers:
+
+# ROLE TABLE HANDLERS
+
+ postprice:
+   class: logging.FileHandler
+   level: DEBUG
+   formatter: simple
+   filename:  loggerfiles/pricelogger/postprice.log
+
+ getupdateprice:
+   class: logging.FileHandler
+   level: DEBUG
+   formatter: simple
+   filename:  loggerfiles/pricelogger/getupdateprice.log
+
+
+ consoleprice:
+   class: logging.StreamHandler
+   level: DEBUG
+   formatter: simple
+
+
+loggers:
+
+ postprices:
+   level: DEBUG
+   handlers: [postprice]
+   propagate: True
+
+ getupdateoprices:
+   level: DEBUG
+   handlers: [getupdateprice]
+   propagate: True
+
+ consoleprices:
+   level: DEBUG
+   handlers: [consoleprice]
+   propagate: True

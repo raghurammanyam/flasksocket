@@ -1,0 +1,56 @@
+version: 1
+disable_existing_loggers: False
+formatters:
+ simple:
+   format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+handlers:
+
+# ROLE TABLE HANDLERS
+
+ postproduct:
+   class: logging.FileHandler
+   level: DEBUG
+   formatter: simple
+   filename:  loggerfiles/productslogger/postproduct.log
+
+ getupdateproduct:
+   class: logging.FileHandler
+   level: DEBUG
+   formatter: simple
+   filename:  loggerfiles/productslogger/getupdateproduct.log
+
+ getproductsize:
+   class: logging.FileHandler
+   level: DEBUG
+   formatter: simple
+   filename:  loggerfiles/productslogger/getproductsize.log
+
+
+
+ consoleproduct:
+   class: logging.StreamHandler
+   level: DEBUG
+   formatter: simple
+
+
+loggers:
+
+ postproducts:
+   level: DEBUG
+   handlers: [postproduct]
+   propagate: True
+
+ getupdateproducts:
+   level: DEBUG
+   handlers: [getupdateproduct]
+   propagate: True
+
+ getproductsizes:
+   level: DEBUG
+   handlers: [getproductsize]
+   propagate: True
+
+ consoleproducts:
+   level: DEBUG
+   handlers: [consoleproduct]
+   propagate: True
