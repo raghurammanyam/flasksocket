@@ -21,7 +21,7 @@ Flask-OAuthlib==0.9.5
 Flask-RESTful==0.3.7
 Flask-S3==0.3.3
 Flask-SQLAlchemy==2.1
-httplib2==0.12.1
+httplib2==0.18.0
 idna==2.8
 itsdangerous==1.1.0
 Jinja2==2.10
